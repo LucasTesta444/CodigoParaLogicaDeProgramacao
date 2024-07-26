@@ -1,0 +1,22 @@
+{
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "GitHub Light",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.fontSize": 16,
+    "settingsSync.ignoredSettings": [],
+    "lldb.library": "/Library/Developer/Toolchains/swift-5.10.1-RELEASE.xctoolchain/System/Library/PrivateFrameworks/LLDB.framework/Versions/A/LLDB",
+    "lldb.launch.expressions": "native",
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "swift.path": "/Library/Developer/Toolchains/swift-5.10.1-RELEASE.xctoolchain/usr/bin",
+    "swift.swiftEnvironmentVariables": {
+        "DEVELOPER_DIR": "/Applications/Xcode.app"
+    },
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "strings": "off",
+        "other": "on"
+    }
+}
