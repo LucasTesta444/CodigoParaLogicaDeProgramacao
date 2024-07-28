@@ -20,6 +20,22 @@ class Conta {
         print("Depósito de \(valor) realizado com sucesso!")
     }
 
+    func transferir(para contaDestino: Conta) {
+        print("Qual o valor que deseja transferir? ('CANCELAR' para sair)")
+        if let valorString = readLine(), valorString.uppercased() != "CANCELAR" {
+            if let valorUser = Double(valorString) {
+                sacar(valorUser)
+                contaDestino.depositar(valorUser)
+                print("Transferindo \(valorUser) para a conta \(contaDestino.nome)...")
+                print("Transferência realizada com sucesso!!!")
+            } else {
+                print("Valor inválido. Por favor, insira um número válido.")
+            }
+        } else {
+            print("CANCELANDO TRANSFERÊNCIA...")
+        }
+    }
+
     func exibirSaldo() {
         print("Conta: \(nome)")
         print("Saldo: R$\(saldo)")
@@ -207,9 +223,8 @@ class LojaOnline: ContaPoupanca {
 }
 
 var contaLucas = LojaOnline(nome: "Lucas Testa", nomeDaLoja: "LucasStore")
+var contaLeo = LojaOnline(nome: "Leonardo Testa", nomeDaLoja: "LeonardoStore")
 contaLucas.depositar(10000)
-contaLucas.sacar(500)
-contaLucas.solicitarCartaoDebito()
-contaLucas.solicitarCartaoCredito()
-contaLucas.comprarProdutos()
-contaLucas.exibirSaldo()
+contaLucas.transferir(para: contaLeo)
+print(contaLucas.saldo)
+print(contaLeo.saldo)
